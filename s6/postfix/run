@@ -65,8 +65,10 @@ fi
 # Configure Postfix General parameters
 echo "postfix >> Setting mailname to ${MAILNAME}"
 postconf -e myorigin="${MAILNAME}"
-postconf -e myhostname="${MAILNAME}"
-postconf -e mydestination="${MAILNAME}"
+echo "postfix >> Setting mydestination to ${MYDESTINATION}"
+postconf -e mydestination="${MYDESTINATION}"
+echo "postfix >> Setting myhostname to ${MYHOSTNAME}"
+postconf -e myhostname="${MYHOSTNAME}"
 
 echo "postfix >> Setting mynetworks to ${MYNETWORKS}"
 postconf -e mynetworks="${MYNETWORKS}"
